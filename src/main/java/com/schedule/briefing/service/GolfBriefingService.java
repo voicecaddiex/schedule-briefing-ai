@@ -35,7 +35,7 @@ public class GolfBriefingService {
   private final WebClient webClient;
   private Client client;
   private final ScheduleSessionManager sessionManager;
-  private final String modelId = "gemini-3.1-flash-lite-preview";
+  private final String modelId = "gemini-2.5-flash-lite";
 
   @Value("${gcp.vertex-ai.location}")
   private String location;

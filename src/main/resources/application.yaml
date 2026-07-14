@@ -16,7 +16,7 @@ spring:
 
 gcp:
   vertex-ai:
-    location: us-central1
+    location: global
     credentials: ${GCP_CREDENTIALS_PATH:}
 
 google:
