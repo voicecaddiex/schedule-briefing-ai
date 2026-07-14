@@ -1,0 +1,12 @@
+gcp:
+  vertex-ai:
+    location: global
+    credentials: your-service-account-key.json
+
+google:
+  application:
+    projectId: your-gcp-project-id
+
+gemini:
+  cloud-run:
+    url: ""
