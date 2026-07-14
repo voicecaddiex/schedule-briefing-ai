@@ -7,6 +7,12 @@ plugins {
 group = 'com.schedule'
 version = '0.0.1-SNAPSHOT'
 
+configurations.configureEach {
+    resolutionStrategy {
+        force 'org.apache.commons:commons-lang3:3.18.0'
+    }
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(17)
@@ -28,6 +34,16 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+
+    // WebClient 사용을 위한 WebFlux (Mono/Flux 포함)
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    implementation platform('com.google.cloud:libraries-bom:26.50.0')
+
+    // Google Gen AI SDK (Vertex AI / Gemini 호출)
+    implementation 'com.google.genai:google-genai:1.34.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http'  // 버전 생략 (BOM이 관리)
+    implementation 'com.google.cloud:google-cloud-aiplatform'
 }
 
 tasks.named('test') {

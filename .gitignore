@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Local secrets - never commit
+application-local.yaml
+application-local.yml
+vertex-ai-api.json
+*-key.json
+*.pem
